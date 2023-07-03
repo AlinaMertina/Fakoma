@@ -117,17 +117,17 @@ create table employe_du_temps(
 
 
 -- 11
-drop view v_detailleemp;
-drop view v_detailes_base_employee;
-drop view v_emplois_du_temps_employer;
-drop table employe_du_temps;
-drop table post_emplois_dutemps;
-drop table TacheSpecifique_emp;
-drop table salaire_employer;
-drop table Avertisement_employer;
-drop table absence;
-drop table employer_emplois_dutemps;
-drop table employer;
-drop table centre_departement;
-drop table semaine;
-drop table poste;
+-- drop view v_detailleemp;
+-- drop view v_detailes_base_employee;
+-- drop view v_emplois_du_temps_employer;
+-- drop table employe_du_temps;
+-- drop table post_emplois_dutemps;
+-- drop table TacheSpecifique_emp;
+-- drop table salaire_employer;
+-- drop table Avertisement_employer;
+-- drop table absence;
+-- drop table employer_emplois_dutemps;
+-- drop table employer;
+-- drop table centre_departement;
+-- drop table semaine;
+-- drop table poste;

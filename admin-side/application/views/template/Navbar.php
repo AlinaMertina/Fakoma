@@ -41,11 +41,11 @@
 <body>
   <div class="container-scroller body1">
     <!-- partial:../../partials/_sidebar.html -->
-    <nav class="sidebar sidebar-offcanvas nav1" id="sidebar"  style="background-color:#141514;font-family: serif; ">
+    <nav class="sidebar sidebar-offcanvas nav1" id="sidebar"  style="background-color:#77AB4C;font-family: serif; ">
     
       <div
         class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top"
-        style="background-color:#141514;">
+        style="background-color:#FFFFFF;">
         <a class="sidebar-brand brand-logo" href="#"><img src="<?= base_url("assets/logo.png")
             ?>"
           alt="logo" /></a>
@@ -120,8 +120,8 @@
            <!-- Gestion Production -->
           </li>
           <li class="nav-item menu-items module">
-              <a class="navg" href="<?= base_url("index.php/CT_Produit/index") ?>">
-                <span class="menu-icon">
+              <a class="navg" href="<?= base_url("index.php/CT_Produit/index") ?>"  style="background-color: white;   opacity: 80%;">
+                <span class="menu-icon" >
                 <i class="mdi mdi-chair-school"></i>
                 </span>
                 <span class="menu-title"> Production</span>
@@ -148,8 +148,8 @@
                 </li> -->
           <!--Gestion Stocks -->
           </li>
-            <li class="nav-item menu-items module" >
-              <a class="navg" href="<?= base_url("index.php/CT_Stock_Produit/inventory") ?>">
+            <li class="nav-item menu-items module" > 
+              <a class="navg" href="<?= base_url("index.php/CT_Stock_Produit/inventory") ?>"  style="background-color: white;   opacity: 80%;">
                 <span class="menu-icon">
                 <i class="mdi mdi-server"></i>
                 </span>
@@ -161,7 +161,7 @@
           <!--Gestion Comptabiliter -->
           </li>
           <li class="nav-item menu-items module">
-              <a class="navg" href="<?= base_url("index.php/CT_Gestion/input_journal") ?>">
+              <a class="navg" href="<?= base_url("index.php/CT_Gestion/input_journal") ?>"  style="background-color: white;   opacity: 80%;">
                 <span class="menu-icon">
                 <i class="mdi mdi-chart-pie"></i>
                 </span>
@@ -173,7 +173,7 @@
           <!--Gestion Employeer -->
           </li>
             <li class="nav-item menu-items module">
-              <a class="navg" href="<?= base_url("index.php/CT_CRUD_Employer/getAll_emp") ?>">
+              <a class="navg" href="<?= base_url("index.php/CT_CRUD_Employer/getAll_emp") ?>"  style="background-color: white;   opacity: 80%;">
                 <span class="menu-icon">
                   <i class="mdi mdi-account-multiple"></i>
                 </span>
@@ -213,7 +213,7 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
           <!-- partial:partials/_navbar.html -->
-          <nav class="navbar p-0 fixed-top d-flex flex-row" style="background-color:#141514;">
+          <nav class="navbar p-0 fixed-top d-flex flex-row" style="background-color:#FFFFFF; ">
             
             <div
               class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
@@ -234,7 +234,7 @@
                
                 <li class="nav-item dropdown">
                 <div class="col-12">
-                  <button type="submit" style="background-color: #A6EBC9;color:black" class="btn btn-primary">Deconnexion</button>
+                  <button type="submit" style="background-color: #F33333;color:white" class="btn btn-primary">Deconnexion</button>
                 </div>
 
                 </li>
