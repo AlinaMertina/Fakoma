@@ -1,0 +1,22 @@
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/ajoutEmployer
+
+--modification EMP00070
+readEmploisdutemps($idemploye)
+ajoutTache
+selectTache($idemployer)
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/selectTache/EMP00074
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/selectTache/EMP00074
+
+
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/ajoutTache
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/readEmploisdutemps/EMP00074
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/updateemployer/EMP00074
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/getAll_emp
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/Detailleemp

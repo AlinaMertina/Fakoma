@@ -1,0 +1,42 @@
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/liste_post
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/liste_post
+
+--premier insert employs du temps employer
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/emplois_du_temps_employer?idemployer=17&&idpost=11
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/recher_employer?date=2023/06/02
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/moyenne_salaire_poste
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/Poste
+--modification emplois du temps employer
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/modif_emplois_du_temp_emp?idemployer=2
+--nombre  employer present
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/nombre_presence?date=2023-06-11
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/liste_employe_present?date=2023-06-11&&nomsemaine=Vendredi
+
+--mpdification salaire employer
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/Modif_salaire_emp
+
+--chart evolution salaire employer 
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/evolution_salaire_emp?idemployer=1
+--insertion absence employer
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/Absence_emp
+--charte nombre absence employer
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/chart_nbr_absence_emp?idemployer=1
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/test
+index.php/CT_CRUD_Employer/liste_post
+
+---Avertisement employer
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/Avertisementemployer
+
+http://localhost/FakoMa/admin-side/index.php/CT_CRUD_Employer/load_without_data/RechercheFaute
+
+
+remove_employer($idemployer)
+
+

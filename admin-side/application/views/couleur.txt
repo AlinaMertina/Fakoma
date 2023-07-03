@@ -1,0 +1,49 @@
+#07A7C5
+#F1F4F7
+#101B3B
+#0184C8 
+
+
+
+#141514
+#A6EBC9;
+style="background-color: white;"
+
+background-color: white;
+background-color: #A6EBC9;
+
+style="background-color: #A6EBC9;"
+
+style="background-color: black;"
+
+style="color:black"
+--lien
+production
+<?= base_url("index.php/CT_Produit/index") ?>
+matiere premiere
+<?= base_url("index.php/CT_MatierePremiere/index") ?>
+
+<?= base_url("index.php/CT_Gestion/input_journal") ?>
+
+Delete from codejournal;
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+
+
