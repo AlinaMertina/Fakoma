@@ -51,7 +51,7 @@
    
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper" style="background-color: white;">
+          <div class="content-wrapper" style="background-color: #F1F4F7;">
             <div class="page-header">
               <h3 class="page-title" style="color: black;">Gestion des produits</h3>
               <nav aria-label="breadcrumb">
@@ -74,7 +74,7 @@
             <div class="row">
 
               <div class="col-lg-12 grid-margin stretch-card" >
-                <div class="card" style="background-color:#A6EBC9;">
+                <div class="card" style="background-color:#FFFFFF;">
                   <div class="card-body">
                     <h4 class="card-title" style="color:black;">Produit</h4>
                     <div class="table-responsive">
@@ -118,7 +118,7 @@
             <div class="row">
 
               <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card" style="background-color:#A6EBC9;">
+                <div class="card" style="background-color:#FFFFFF;">
                   <div class="card-body">
                     <h4 class="card-title" style="color:black;">Compositions</h4>
                     <div class="table-responsive">
@@ -161,7 +161,7 @@
             <div class="row">
               
               <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card" style="background-color: #A6EBC9;">
+                <div class="card" style="background-color: #FFFFFF;">
                   <div class="card-body">
                     <h4 class="card-title" style="color:black;" >Ajout nouveau Produit</h4>
                     <div class="table-responsive">
