@@ -37,6 +37,10 @@
       .dropdown-item:hover {
         background-color: #A6EBC9;
       }
+      .card-body{
+     background-color: #F1F4F7;
+   
+      }
 </style>
 
     <link rel="stylesheet" href="<?= base_url("assets/produit/css/insertion.css"); ?>">

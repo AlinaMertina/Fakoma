@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?= base_url("assets/css_perso/fanampiny.css") ?>">
 <style>
 .dropdown {
   position: relative;
@@ -88,7 +89,7 @@ table{
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Formulaire de sélection</h4>
+                            <h4 class="card-title" >Formulaire de sélection</h4>
                             <p class="card-description"></p>
                             <form class="form-inline" action="<?= bu('CT_Stock_Produit/inventory1/');?>" method="get">
                                 <div class="input-group mb-2 mr-sm-2">

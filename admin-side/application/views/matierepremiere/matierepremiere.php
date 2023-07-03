@@ -49,7 +49,10 @@
       .dropdown-item:hover {
         background-color: #A6EBC9;
       }
-      
+      .card-body{
+     background-color: #F1F4F7;
+   
+       }
     </style>
     <link rel="stylesheet" href="<?= base_url("assets/produit/css/insertion.css"); ?>">
     <!-- End layout styles -->
@@ -77,7 +80,7 @@
 
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body" style="background-color: #A6EBC9;">
+                  <div class="card-body" >
                     <h4 class="card-title" style="color:black">Matiere premiere</h4>
                     <div class="table-responsive">
                       <table class="table">
@@ -117,7 +120,7 @@
 
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body" style="background-color: #A6EBC9;">
+                  <div class="card-body" >
                     <h4 class="card-title" style="color:black">Entrer matiere premiere</h4>
                     <div class="table-responsive">
                       <form  action="<?= bu('CT_MatierePremiere/entrerMTP');?>" method="post">
@@ -161,7 +164,7 @@
 
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body" style="background-color: #A6EBC9;">
+                  <div class="card-body" >
                     <h4 class="card-title" style="color:black" >Sortie/Utilisation matiere premiere</h4>
                     <div class="table-responsive">
                       <form  action="<?= bu('CT_MatierePremiere/sortieMTP');?>" method="post">
@@ -206,7 +209,7 @@
               
               <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body" style="background-color: #A6EBC9;">
+                  <div class="card-body" >
                     <h4 class="card-title" style="color:black" >Nouvelle matiere premiere</h4>
                     <div class="table-responsive">
                       <form  action="<?= bu('CT_MatierePremiere/store');?>" method="post">
