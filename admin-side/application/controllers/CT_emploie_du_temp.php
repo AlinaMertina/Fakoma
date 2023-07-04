@@ -6,6 +6,21 @@ class CT_emploie_du_temp extends CI_Controller {
 		parent::__construct();
         $this->load->model('MD_emploie_du_temps');
 	}
+    public function load_page($name_page, $data)
+    {
+        $this->load->view('template/Header');
+        $this->load->view('template/Navbar');
+        $this->load->view('emploie_du_temps/' . $name_page, $data);
+        //$this->load->view('template/Footer_stat');
+        $this->load->view('template/Footer');
+    }
+    private function viewer($page,$data){
+        $v = array(
+            'page'=>$page,
+            'data'=>$data
+        );
+        $this->load->view('template/BasePage',$v);
+    }
     public function index()
     {
         $table = $this->MD_emploie_du_temps->selectemploie_du_temps(); 
@@ -13,6 +28,7 @@ class CT_emploie_du_temp extends CI_Controller {
         // $jsonString = json_encode($data);
         // var_dump($table);
         $this->load->view("emploie_du_temps/emploie_du_temps",$data);
+        // $this->load_page("emploiedutemps",$data);
     }
 	public function select()
     {

@@ -181,6 +181,17 @@
               </a>
           </li>
           <!--Fin Gestion Comptabiliter -->
+          <!--Gestion Emploie_du_temps -->
+          </li>
+            <li class="nav-item menu-items module">
+              <a class="navg" href="<?= base_url("index.php/CT_emploie_du_temp") ?>">
+                <span class="menu-icon">
+                  <i class="mdi mdi-account-multiple"></i>
+                </span>
+                <span class="menu-title"> Emploie du Temps</span>
+              </a>
+          </li>
+          <!--Fin Gestion Comptabiliter -->
 
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="<?= bu("CT_Optimisation") ?>">

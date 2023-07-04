@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Calendar</title>
+  <title>Calendrier</title>
 
  <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url()."assets/plugins/fontawesome-free/css/all.min.css"?>">
@@ -21,14 +21,6 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-   <!-- ETO NO ATSOFOKA LE NAVBAR AMIN'NY SISINY -->
-  </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -261,7 +253,7 @@
               }
             }
           // Ouvrir la requête AJAX
-          xhr.open('POST', 'update', true);
+          xhr.open('POST', 'CT_emploie_du_temp/update', true);
           // Envoyer la requête AJAX avec les données du formulaire
           xhr.send(formData);
         }

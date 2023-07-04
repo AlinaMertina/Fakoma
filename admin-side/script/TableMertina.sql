@@ -111,8 +111,7 @@ create table employe_du_temps(
     dimance int,
     datedebut date,
     datefin date,
-    FOREIGN KEY (idemployer) REFERENCES employer(idemployer),
-    FOREIGN KEY (iddepartement) REFERENCES centre_departement(iddepartement)
+    FOREIGN KEY (idemployer) REFERENCES employer(idemployer)
 );
 
 
