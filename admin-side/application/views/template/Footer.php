@@ -16,21 +16,21 @@
 <!-- End custom js for this page-->
 <!-- personal script -->
 <script>
-    // function for sending a formData using jquery
-    function sendFormData(form, url, method, callback) {
-        var formData = new FormData(form);
-        $.ajax({
-            url: url,
-            type: method,
-            data: formData,
-            success: function(data) {
-                callback(data);
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    }
+// function for sending a formData using jquery
+function sendFormData(form, url, method, callback) {
+    var formData = new FormData(form);
+    $.ajax({
+        url: url,
+        type: method,
+        data: formData,
+        success: function(data) {
+            callback(data);
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
 </script>
 </body>
 

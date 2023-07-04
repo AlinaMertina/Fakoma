@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = "http://localhost/FakoMa/admin-side/";
+$config['base_url'] = "http://localhost/Fakoma/admin-side/";
 
 /*
 |--------------------------------------------------------------------------
@@ -512,7 +512,7 @@ $config['time_reference'] = 'local';
 |
 */
 $config['rewrite_short_tags'] = FALSE;
-$config['upload_path'] =BASEPATH . "assets/imageemp";
+$config['upload_path'] = BASEPATH . "assets/imageemp";
 /*
 |--------------------------------------------------------------------------
 | Reverse Proxy IPs
