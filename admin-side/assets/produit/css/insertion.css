@@ -1,3 +1,39 @@
+#validation {
+    float: right;
+    background-color: #61FF7E;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: none;
+    color: white;
+    min-width: 160px;
+    z-index: 1;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    display: block;
+    margin-right: 20%;
+    margin-left: -100%;
+    background-color: #141514;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #A6EBC9;
+}
 
 .tete {
     color: #333;

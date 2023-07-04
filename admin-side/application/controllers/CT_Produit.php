@@ -4,15 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class CT_Produit extends CI_Controller 
 {
-
-    public function load_page($name_page, $data)
-    {
-        $this->load->view('template/Header');
-        $this->load->view('template/Navbar');
-        $this->load->view('produit/' . $name_page, $data);
-        //$this->load->view('template/Footer_stat');
-        $this->load->view('template/Footer');
-    }
     public function __construct()
     {
         parent::__construct();
@@ -38,8 +29,7 @@ class CT_Produit extends CI_Controller
         $data['productComposers'] = 
             $this->MD_CompositionProduit->get_mapping_by_product_and_matierepremiere_with_composition($data['produits'], $data['matierepremieres']);
 
-        //$this->viewer("produit/index",$data);
-        $this->load_page("index" ,$data);
+        $this->viewer("produit/index",$data);
     }
 
     public function store()
@@ -83,6 +73,6 @@ class CT_Produit extends CI_Controller
     public function delete($idproduit)
     {
         $this->MD_Produit->delete_produit($idproduit);
-        redirect('CT_Produit/index');
+        redirect('CT_Produit');
     }
 }

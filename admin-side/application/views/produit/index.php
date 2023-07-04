@@ -1,55 +1,6 @@
-<!-- plugins:css -->
 
-<!-- endinject -->
-<!-- Plugin css for this page -->
-<!-- End plugin css for this page -->
-<!-- inject:css -->
-<!-- endinject -->
-<!-- Layout styles -->
-<style>
-#validation {
-    float: right;
-    background-color: #61FF7E;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: none;
-    color: white;
-    min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    z-index: 1;
-
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-item {
-    /* padding: 12px 16px; */
-    text-decoration: none;
-    display: block;
-    margin-right: 20%;
-    margin-left: -100%;
-    background-color: #141514;
-    color: white;
-}
-
-.dropdown-item:hover {
-    background-color: #A6EBC9;
-}
-</style>
 <link rel="stylesheet" href="<?= base_url("assets/produit/css/insertion.css"); ?>">
-<!-- End layout styles -->
 
-<!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
@@ -59,16 +10,12 @@
                 <div class="dropdown">
                     <span class="mdi mdi-format-list-bulleted dropdown-item"></span>
                     <div class="dropdown-content">
-                        <a class="dropdown-item" href="<?= base_url("index.php/CT_Produit/index") ?>">Production </a>
-                        <a class="dropdown-item" href="<?= base_url("index.php/CT_MatierePremiere/index") ?>">Matiere
-                            Premiere </a>
-                        <a class="dropdown-item"
-                            href="<?= base_url("index.php/CT_CompositionProduit/index") ?>">Composition</a>
-                        <a class="dropdown-item"
-                            href="<?= base_url("index.php/CT_Optimisation/index") ?>">Optimisation</a>
+                        <a class="dropdown-item" href="<?= bu("CT_Produit") ?>">Production </a>
+                        <a class="dropdown-item" href="<?= bu("CT_MatierePremiere") ?>">Matiere Premiere </a>
+                        <a class="dropdown-item" href="<?= bu("CT_CompositionProduit") ?>">Composition</a>
+                        <a class="dropdown-item" href="<?= bu("CT_Optimisation") ?>">Optimisation</a>
                     </div>
                 </div>
-
 
             </nav>
         </div>
@@ -102,11 +49,8 @@
                                         <td><?= $produit->unite ?></td>
                                         <td><?= $produit->volume_unitaire ?></td>
                                         <td><a href="#" data-toggle="modal" data-target="#maModal">Update</a></td>
-                                        <td><a href="<?= bu("CT_Produit/delete/" . $produit->idproduit); ?>">Delete</a>
-                                        </td>
-                                        <td><a
-                                                href="<?= bu("CT_Produit/delete/" . $produit->idproduit); ?>">Composition</a>
-                                        </td>
+                                        <td><a href="<?= bu("CT_Produit/delete/" . $produit->idproduit); ?>">Delete</a></td>
+                                        <td><a href="<?= bu("CT_Composition"); ?>">Composition</a></td>
                                     </tr>
                                     <?php } ?>
 
@@ -119,51 +63,6 @@
 
         </div>
         <!-- ----------------------------------LISTE DES PRODUITS ----------------- -->
-
-        <!-- ---------------------------------- COMPOSITION ----------------- -->
-        <div class="row">
-
-            <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Compositions</h4>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-
-                                        <?php for ($i = 0; $i < count($matierepremieres); $i++) { ?>
-                                        <th><?= $matierepremieres[$i]->nommatierepremiere ?>
-                                            (<?= $matierepremieres[$i]->unite ?>)</th>
-                                        <?php } ?>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php foreach ($produits as $produit) { ?>
-                                    <tr>
-                                        <td><?= $produit->nomproduit ?></td>
-
-                                        <?php foreach ($matierepremieres as $matierepremiere) { ?>
-                                        <td>
-                                            <?= $productComposers[$produit->idproduit][$matierepremiere->idmatierepremiere]->quantite ?>
-                                        </td>
-                                        <?php } ?>
-
-                                    </tr>
-                                    <?php } ?>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- ---------------------------------- COMPOSITION ----------------- -->
 
 
         <!-- -------------------------------- AJOUT PRODUIT ------------------------- -->
@@ -250,15 +149,9 @@
     </div>
 </div>
 
-<!-- content-wrapper ends -->
 
-<!-- container-scroller -->
-<!-- plugins:js -->
+
 <script src="<?= base_url("assets/js/vendor.bundle.base.js"); ?>"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- inject:js -->
 <script src="<?= base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
 <script src="<?= base_url("assets/vendor/jquery/jquery-3.2.1.min.js"); ?>"></script>
 <script>

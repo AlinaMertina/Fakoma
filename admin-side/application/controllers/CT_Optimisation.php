@@ -32,13 +32,21 @@ class CT_Optimisation extends CI_Controller
 			'Remainingmatierepremieres' => $this->MD_MatierePremiere->get_Remainingmatiere_premiere()
 		);
 
+        if(count($produits) == 0 || count($data['Remainingmatierepremieres']) == 0)
+        {
+            $data['error'] = "Rien à optimiser, veuillez ajoutez des produits et des matières premiéres d' abord";
+            $data['produits'] = $produits;
+            $this->viewer("optimisation/optimisation",$data);
+            return;
+        }
+
         $data['produits'] = $this->MD_Matrix->GetOptimizedProduction($data['Remainingmatierepremieres'], $produits);
 
         $productComposers = $this->MD_CompositionProduit->get_mapping_by_product_and_matierepremiere_with_composition($data['produits'], $data['Remainingmatierepremieres']);
         
         $data['restes'] = $this->MD_Matrix->GetTemporaryRemainingmatierepremieres($data['Remainingmatierepremieres'], $data['produits'], $productComposers);
 
-        $this->viewer("optimisation/optimisation.php",$data);
+        $this->viewer("optimisation/optimisation",$data);
     }
 
     public function VariedData()
@@ -59,7 +67,7 @@ class CT_Optimisation extends CI_Controller
         
         $data['restes'] = $this->MD_Matrix->GetTemporaryRemainingmatierepremieres($data['Remainingmatierepremieres'], $data['produits'], $productComposers);
 
-        $this->viewer("optimisation/optimisation.php",$data);
+        $this->viewer("optimisation/optimisation",$data);
     }
 
     public function UpdateRemainingmatierepremieres($Remainingmatierepremieres)

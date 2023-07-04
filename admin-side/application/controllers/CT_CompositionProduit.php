@@ -12,16 +12,9 @@ class CT_CompositionProduit extends CI_Controller
         $this->load->model('MD_CompositionProduit');
         $this->load->model('MD_MatierePremiere');
     }
-    public function load_page($name_page, $data)
-    {
-        $this->load->view('template/Header');
-        $this->load->view('template/Navbar');
-        $this->load->view('produit/' . $name_page, $data);
-        //$this->load->view('template/Footer_stat');
-        $this->load->view('template/Footer');
-    }
 
-    private function viewer($page,$data){
+    private function viewer($page,$data)
+    {
         $v = array(
             'page'=>$page,
             'data'=>$data
@@ -38,8 +31,7 @@ class CT_CompositionProduit extends CI_Controller
         $data['productComposers'] = 
             $this->MD_CompositionProduit->get_mapping_by_product_and_matierepremiere_with_composition($data['produits'], $data['matierepremieres']);
 
-        //$this->viewer("produit/composition",$data);
-        $this->load_page("composition", $data);
+        $this->viewer("produit/composition",$data);
     }
 
     public function UpdateComposition()
@@ -58,6 +50,6 @@ class CT_CompositionProduit extends CI_Controller
             
             $this->MD_CompositionProduit->NewCompositionProduit($data);
         }
-        $this->index();
+        redirect('CT_CompositionProduit');
     }
 }
