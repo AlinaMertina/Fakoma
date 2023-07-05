@@ -32,7 +32,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function show_details_employee($idemploye)
     {
-        $requete = "select * from v_detailes_base_employee where  identifiant ='%s' ";
+        $requete = "select * from v_detailes_base_employee where  idemployer ='%s' ";
         $requete = sprintf($requete, $idemploye);
         $query = $this->db->query($requete);
         return $query->result_array()[0];
