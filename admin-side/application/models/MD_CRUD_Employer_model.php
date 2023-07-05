@@ -97,7 +97,7 @@ class MD_CRUD_Employer_model extends CI_Model{
         $query = $this->db->query($requete);
     }
     public function liste_post(){
-        $requete="select idposte,nom_poste from poste";
+        $requete="select idposte,nomposte from poste";
         $query = $this->db->query($requete);
         return $query->result_array();
     }
@@ -286,4 +286,3 @@ class MD_CRUD_Employer_model extends CI_Model{
     }
 
 }
-?>
