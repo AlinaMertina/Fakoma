@@ -2,6 +2,7 @@
 
 <div class="main-panel">
   <div class="content-wrapper">
+    
     <div class="page-header">
       <h3 class="page-title">Client</h3>
       <nav aria-label="breadcrumb">
@@ -15,31 +16,29 @@
       </nav>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
  
-            <form action="<?php bu('CT_Gestion/insert_client')?>" method="post" >
-              <h6 style="margin-left: 3px; color:gray;"> Nom
-              <input id="credit" type="text" class="form-control" name="nom"> 
-              </h6>
-              <h6 style="margin-left: 3px; color: gray;"> Adresse :
-                  <input id="credit" type="text" class="form-control" name="adresse">
-              </h6>
-              <h6 style="margin-left: 3px; color: gray;"> Mail :
-                  <input id="credit" type="text" class="form-control" name="mail">
-              </h6>
-              <h6 style="margin-left: 3px; color: gray;"> Tel :
-                  <input id="credit" type="text" class="form-control" name="tel">
-              </h6>
-              <div class="ligne" style="margin-left: 1100px;">
-                  <button type="submit" class="btn btn-success">Valider</button>
-              </div>
-            </form>
+          <form action="<?php bu('CT_Gestion/insert_client')?>" method="post" >
+            <h6 style="margin-left: 3px; color:gray;"> Nom
+            <input id="credit" type="text" class="form-control" name="nom"> 
+            </h6>
+            <h6 style="margin-left: 3px; color: gray;"> Adresse :
+                <input id="credit" type="text" class="form-control" name="adresse">
+            </h6>
+            <h6 style="margin-left: 3px; color: gray;"> Mail :
+                <input id="credit" type="text" class="form-control" name="mail">
+            </h6>
+            <h6 style="margin-left: 3px; color: gray;"> Tel :
+                <input id="credit" type="text" class="form-control" name="tel">
+            </h6>
+            <div class="ligne" style="margin-left: 1100px;">
+                <button type="submit" class="btn btn-success">Valider</button>
             </div>
+          </form>
             
-            <div class="table-responsive">
+          <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr style="font-size: 25px;">
@@ -76,11 +75,11 @@
                 
               </tbody>
             </table>
-
           </div>
+
         </div>
       </div>
-
     </div>
+
   </div> 
 </div> 
