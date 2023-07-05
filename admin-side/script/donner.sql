@@ -6,14 +6,14 @@ insert into semaine(nom_semain) values ('Vendredie');
 insert into semaine(nom_semain) values ('Samedie');
 insert into semaine(nom_semain) values ('Dimanche');
 
-insert into poste (idposte,nom_poste) values(1,'Femme de  menage');
-insert into poste (idposte,nom_poste) values(2,'moulleur de Betton');
+insert into poste values(1,'Femme de  menage');
+insert into poste values(2,'moulleur de Betton');
 select * from poste where idpost=3;
-insert into poste (idposte,nom_poste) values(3, 'Livreur');
-insert into poste (idposte,nom_poste) values(7,'Directeur Generale');
-insert into poste (idposte,nom_poste) values(8,'Fabricant de composet');
-insert into poste (idposte,nom_poste) values(5,'Chimiste');
-insert into poste (idposte,nom_poste) values(6,'Emballeur');
+insert into poste values(3, 'Livreur');
+insert into poste values(7,'Directeur Generale');
+insert into poste values(8,'Fabricant de composet');
+insert into poste values(5,'Chimiste');
+insert into poste values(6,'Emballeur');
 
 update employer set identifiant='EMP00001' where idemployer=1;
 update employer set identifiant='EMP00002' where idemployer=2;
@@ -34,7 +34,7 @@ update employer set identifiant='EMP00016' where idemployer=16;
 update employer set identifiant='EMP00017' where idemployer=17;
 
 
-insert into employer(idemployer,nom_employer,prenom_employer,idposte,date_entrer,contact,dtn) values (2,'Ratianarivo','Dylan',6,'2023-02-12','0342103384','2003-07-28');
+insert into employer values (2,'Ratianarivo','Dylan',6,'2023-02-12','0342103384','2003-07-28');
 insert into employer(idemployer,nom_employer,prenom_employer,idposte,date_entrer,contact,dtn) values (1,'TOTO','Mertina Claudie',6,'2023-02-12','0346603384','2003-06-28');
 insert into employer(idemployer,nom_employer,prenom_employer,idposte,date_entrer,contact,dtn) values (3,'Ratianarivo','Mirado Mathieu',7,'2022-02-11','0341234567','2000-12-12');
 insert into employer(idemployer,nom_employer,prenom_employer,idposte,date_entrer,contact,dtn) values (4,'ANDRANOTAHIANA','Kanto',7,'2023-02-12','0349876543','1999-11-09');
