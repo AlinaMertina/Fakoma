@@ -56,7 +56,7 @@ create table Avertisement_employer(
 );
 
 create view v_detailleemp as (
-    select poste.idposte,nom_poste,nom_employer,prenom_employer,employer.identifiant,date_entrer,dtn,description,dateavertisement,contact from employer LEFT JOIN Avertisement_employer on Avertisement_employer.identifiant=employer.identifiant join poste
+    select poste.idposte,nomposte,nom_employer,prenom_employer,employer.idemployer,date_entrer,dtn,description,dateavertisement,contact from employer LEFT JOIN Avertisement_employer on Avertisement_employer.identifiant=employer.identifiant join poste
     on employer.idposte=poste.idposte
 );
 

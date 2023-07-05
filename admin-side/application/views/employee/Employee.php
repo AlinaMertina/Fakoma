@@ -15,14 +15,16 @@
                                         <input type="text" class="form-control" placeholder="recherche" name="mot">
                                     </div>
                                     <div class="mx-1">
-                                        <button type="submit" class="btn btn-primary"><i class='bi bi-search'></i></button>
+                                        <button type="submit" class="btn btn-primary"><i
+                                                class='bi bi-search'></i></button>
                                     </div>
                                 </div>
                             </form>
                         </h4>
                         <div class="card-description d-flex justify-content-end">
 
-                            <a href="<?= base_url("index.php/CT_CRUD_Employer/ajoutEmployer") ?>"> <button type="submit" class="btn btn-primary" style="float:right">+</button></a>
+                            <a href="<?= base_url("index.php/CT_CRUD_Employer/ajoutEmployer") ?>"> <button type="submit"
+                                    class="btn btn-primary" style="float:right">+</button></a>
 
                         </div>
 
@@ -41,17 +43,19 @@
 
                                     <?php if (isset($emp)) {
                                         for ($i = 0; $i < count($emp); $i++) { ?>
-                                            <tr>
-                                                <td> <?= $emp[$i]['nom_employer'] ?> </td>
-                                                <td> <?= $emp[$i]['prenom_employer'] ?> </td>
-                                                <td> <?= $emp[$i]['dtn'] ?> </td>
-                                                <td> <?= $emp[$i]['contact'] ?> </td>
-                                                <td>
-                                                    <div class="btn-group">
-                                                        <a href="<?= base_url("index.php/CT_CRUD_Employer/detaille") . "/" . $emp[$i]['identifiant'] ?>"><button class="btn btn-primary">Detaille</button></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                    <tr>
+                                        <td> <?= $emp[$i]['nom_employer'] ?> </td>
+                                        <td> <?= $emp[$i]['prenom_employer'] ?> </td>
+                                        <td> <?= $emp[$i]['dtn'] ?> </td>
+                                        <td> <?= $emp[$i]['contact'] ?> </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a
+                                                    href="<?= base_url("index.php/CT_CRUD_Employer/detaille") . "/" . $emp[$i]['idemployer'] ?>"><button
+                                                        class="btn btn-primary">Detaille</button></a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <?php }
                                     } ?>
                                 </tbody>
@@ -66,9 +70,9 @@
 </div>
 <!-- main-panel ends -->
 <script>
-    function addEmployee(event) {
-        event.preventDefault();
-        let employeeForm = document.getElementById('employeeForm');
-        sendFormData(employeeForm, 'test', 'POST');
-    }
+function addEmployee(event) {
+    event.preventDefault();
+    let employeeForm = document.getElementById('employeeForm');
+    sendFormData(employeeForm, 'test', 'POST');
+}
 </script>
