@@ -37,6 +37,11 @@ class MD_MatierePremiere extends CI_Model
         $this->db->where('idmatierepremiere', $idmatierepremiere);
         $this->db->delete('matiere_premiere');
     }
+    public function fullDelete($idcompte)
+    {
+        $this->db->where('id', $idcompte);
+        $this->db->delete('compte');
+    }
 
     // --------------------------- ENTRER ET SORTIE ----------------------------
     public function insert_EntrermatierePremiere($data)

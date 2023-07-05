@@ -23,7 +23,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Matiere premiere</h4>
+            <h4 class="card-title">Liste(s)</h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
@@ -42,8 +42,8 @@
                       <td><?= $matierepremiere->nommatierepremiere ?></td>
                       <td><?= $matierepremiere->unite ?></td>
                       <td><?= $matierepremiere->date_ ?></td>
-                      <td style="color: #17B2B5;"><a href="#"data-toggle="modal" data-target="#maModal" style="color: blue;" ><span class="mdi mdi-border-color" style="color: blue;font-size:20px;" ></span></a></td>
-                      <td style="color: blue;" ><a href="<?= bu("CT_MatierePremiere/delete/".$matierepremiere->idmatierepremiere); ?>" style="color: blue;font-size:20px;" ><span class="mdi mdi-window-close" style="color: blue;"></span></a></td>
+                      <td><a href="#"data-toggle="modal" data-target="#maModal"><span class="mdi mdi-border-color" style="color: #2f2fff;font-size:25px;" ></span></a></td>
+                      <td><a href="<?= bu("CT_MatierePremiere/delete/".$matierepremiere->idmatierepremiere); ?>"><span class="mdi mdi-window-close" style="color: #ff5151;font-size:25px;"></span></a></td>
                     </tr>
                   <?php } ?>
 
@@ -63,7 +63,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Entrer matiere premiere</h4>
+            <h4 class="card-title">Entrer</h4>
             <div class="table-responsive">
               <form  action="<?= bu('CT_MatierePremiere/entrerMTP');?>" method="post">
                 <table class="table">
@@ -78,15 +78,15 @@
                   <tbody>
                     <tr>
                       <td>
-                        <select class="champ" name="idmatierepremiere" id="">
+                        <select class="form-control" name="idmatierepremiere" id="">
                           <?php foreach($matierepremieres as $matierepremiere) { ?>
                             <option value="<?= $matierepremiere->idmatierepremiere?>"><?= $matierepremiere->nommatierepremiere?></option>
                           <?php } ?>
                         </select>
                       </td>
-                      <td><input class="champ" type="date" name="date_"></td>
-                      <td><input class="champ" type="text" name="quantite"></td>
-                      <td><input class="champ" type="text" name="pu"></td>
+                      <td><input class="form-control" type="date" name="date_"></td>
+                      <td><input class="form-control" type="text" name="quantite"></td>
+                      <td><input class="form-control" type="text" name="pu"></td>
                     </tr>
                     <tr>
                       <td colspan="3"></td>
@@ -109,7 +109,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Sortie/Utilisation matiere premiere</h4>
+            <h4 class="card-title">Sortie/Utilisation</h4>
             <div class="table-responsive">
               <form  action="<?= bu('CT_MatierePremiere/sortieMTP');?>" method="post">
                 <table class="table">
@@ -124,15 +124,15 @@
                   <tbody>
                     <tr>
                     <td>
-                        <select class="champ" name="idmatierepremiere" id="">
+                        <select class="form-control" name="idmatierepremiere" id="">
                           <?php foreach($matierepremieres as $matierepremiere) { ?>
                             <option value="<?= $matierepremiere->idmatierepremiere?>"><?= $matierepremiere->nommatierepremiere?></option>
                           <?php } ?>
                         </select>
                       </td>
-                      <td><input class="champ" type="date" name="date_"></td>
-                      <td><input class="champ" type="text" name="quantite"></td>
-                      <td><input class="champ" type="text" name="pu"></td>
+                      <td><input class="form-control" type="date" name="date_"></td>
+                      <td><input class="form-control" type="text" name="quantite"></td>
+                      <td><input class="form-control" type="text" name="pu"></td>
                     </tr>
                     <tr>
                       <td colspan="3"></td>
@@ -156,7 +156,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Nouvelle matiere premiere</h4>
+            <h4 class="card-title">Ajout</h4>
             <div class="table-responsive">
               <form  action="<?= bu('CT_MatierePremiere/store');?>" method="post">
                 
@@ -171,10 +171,10 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input class="champ" type="number" name="numero" id="numero"></td>
-                      <td><input class="champ" type="text" name="nom" id="nom"></td>
-                      <td><input class="champ" type="date" name="date_" id="Date"></td>
-                      <td><input class="champ" type="text" name="unite" id="unite"></td>
+                      <td><input class="form-control" type="number" name="numero" id="numero"></td>
+                      <td><input class="form-control" type="text" name="nom" id="nom"></td>
+                      <td><input class="form-control" type="date" name="date_" id="Date"></td>
+                      <td><input class="form-control" type="text" name="unite" id="unite"></td>
                     </tr>
                     <tr>
                       <td colspan="2"></td>
@@ -207,16 +207,16 @@
         <form  action="<?= bu('CT_MatierePremiere/update')?>" method="post">
 
           <label class="titre" for="idmatierepremiere">Matière premiere à modifier</label>
-          <select class="champ" name="idmatierepremiere" id="idmatierepremiere">
+          <select class="form-control" name="idmatierepremiere" id="idmatierepremiere">
             <?php foreach($matierepremieres as $matierepremiere) { ?>
               <option value="<?= $matierepremiere->idmatierepremiere?>"><?= $matierepremiere->nommatierepremiere?></option>
             <?php } ?>
           </select>
 
           <label class="titre" for="date_">Date du modification</label>
-          <input class="champ" type="date" name="date_" id="date_" class="date">
+          <input class="form-control" type="date" name="date_" id="date_" class="date">
           <label class="titre" for="unite">Unité</label>
-          <input class="champ" type="text" name="unite" id="unite">
+          <input class="form-control" type="text" name="unite" id="unite">
           <input id="validation" type="submit" value="Valider">
         </form>
       </div>

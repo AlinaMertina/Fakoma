@@ -27,7 +27,7 @@
             <div class="card-body">
 
                 
-                <h4 class="card-title">Compositions</h4>
+                <h4 class="card-title"><?= $produit->nomproduit?></h4>
                 <div class="table-responsive">
 
                 <table class="table">
@@ -45,9 +45,9 @@
                         </tr>
                       <?php } ?>
                       <tr>
-                        <td><input type="date" name="date_" class="date"></td>
+                        <td><input  class="form-control" type="date" name="date_" class="date"></td>
                         <td>
-                          <button class="btn-primary" type="submit">
+                          <button class="btn btn-primary" type="submit">
                             UPDATE
                           </button>
                         </td>

@@ -18,6 +18,79 @@
       </nav>
     </div>
 
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Ressources</h4>
+            <div class="table-responsive">
+              <form action="<?= bu('CT_Optimisation/VariedData')?>" method="post">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Composant</th>
+                      <th>Stock restant</th>
+                      <th>Variation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <?php foreach($Remainingmatierepremieres as $Remainingmatierepremiere) { ?>
+                      <tr>
+                        <td><?= $Remainingmatierepremiere->nommatierepremiere?></td>
+                        <td><?= $Remainingmatierepremiere->reste?> (<?=$Remainingmatierepremiere->unite?>)</a></td>
+                        <td>
+                          <input class="form-control" type="text" value="0" required name="<?= $Remainingmatierepremiere->idmatierepremiere?>">
+                        </td>
+                      </tr>
+                    <?php } ?>
+                    <tr>
+                      <td colspan="<?= count($Remainingmatierepremieres) + 1?>"></td>
+                      <td><input id="validation" type="submit" value="Optimiser"></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <?php if(!isset($error)){ ?>
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Proposition</h4>
+              <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Produit</th>
+                      <th>Prix unitaire</th>
+                      <th>Quantité à produire</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($produits as $produit){ ?>
+                    <tr>
+                      <td><?= $produit->nomproduit?></td>
+                      <td><?= $produit->prix?> (MGA)</td>
+                      <td><?= $produit->maximize?> (unités)</td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+
+    </div>
+
     <?php if(isset($error)){ ?>
 
       <div class="alert danger">
@@ -28,83 +101,12 @@
 
       <div class="row">
 
-        <div class="col-lg-8 col-md-8 offset-2 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Disponibitile des ressources</h4>
-              <div class="table-responsive">
-                <form action="<?= bu('CT_Optimisation/VariedData')?>" method="post">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Composant</th>
-                        <th>Ressource disponible</th>
-                        <th>Variation</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                      <?php foreach($Remainingmatierepremieres as $Remainingmatierepremiere) { ?>
-                        <tr>
-                          <td><?= $Remainingmatierepremiere->nommatierepremiere?></td>
-                          <td><?= $Remainingmatierepremiere->reste?> (<?=$Remainingmatierepremiere->unite?>)</a></td>
-                          <td>
-                            <input type="text" value="0" required name="<?= $Remainingmatierepremiere->idmatierepremiere?>">
-                          </td>
-                        </tr>
-                      <?php } ?>
-                      <tr>
-                        <td colspan="<?= count($Remainingmatierepremieres) + 1?>"></td>
-                        <td><input id="validation" type="submit" value="Optimiser"></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row">
-
-        <div class="col-lg-6 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Proposition de production</h4>
-              <div class="table-responsive">
-              <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>Produit</th>
-                      <th>Quantité</th>
-                      <th>Prix unitaire</th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php foreach($produits as $produit){ ?>
-                    <tr>
-                      <td><?= $produit->nomproduit?></td>
-                      <td><?= $produit->maximize?></td>
-                      <td><?= $produit->prix?></td>
-                    </tr>
-                    <?php } ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">-------------------------------------------------------------</h4>
+                  <h4 class="card-title">GRAPHE</h4>
                   <canvas id="pieChart" style="height:250px"></canvas>
                 </div>
               </div>
@@ -112,14 +114,10 @@
           </div>
         </div>
 
-      </div>
-
-      <div class="row">
-
-        <div class="col-lg-12 grid-margin stretch-card">
+        <div class="col-lg-6 col-md-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Reste associe a cette proposition</h4>
+              <h4 class="card-title">Reste associé</h4>
               <div class="table-responsive">
                 <table class="table table-striped">
                   <thead>
@@ -133,7 +131,7 @@
                     <?php foreach($restes as $reste){ ?>
                     <tr>
                       <td><?= $reste->nommatierepremiere?></td>
-                      <td><?= $reste->reste_apres?></td>
+                      <td><?= $reste->reste_apres?> (<?=$reste->unite?>)</td>
                     </tr>
                     <?php } ?>
                     

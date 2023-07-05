@@ -4,12 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class CT_Produit extends CI_Controller 
 {
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('MD_Produit');
         $this->load->model('MD_MatierePremiere');
         $this->load->model('MD_CompositionProduit');
+        $this->load->model('MD_Gestion');
     }
 
     private function viewer($page,$data){
@@ -34,8 +36,15 @@ class CT_Produit extends CI_Controller
 
     public function store()
     {
+        /////////////////////////////////////////////////////////////
+        $numero = $this->input->post('numero');     // Numero de compte gestion
+        $intitule = $this->input->post('nom');      // intitule
+        $idcompte = $this->MD_Gestion->insert_compte($numero,$intitule);
+        /////////////////////////////////////////////////////////////
+
         $new_product = array(
             'nomproduit' => $this->input->post('nom'),
+            'idcompte' => $idcompte,
             'date_' => $this->input->post('date_'),
             'unite' => $this->input->post('unite'),
             'volume_unitaire' => $this->input->post('volumeunitaire')
@@ -67,12 +76,19 @@ class CT_Produit extends CI_Controller
             'volume_unitaire' => $this->input->post('volume_unitaire')
         );
         $this->MD_Produit->update_produit($data);
+
+        $new_prix_produit = array(
+            'idproduit' => $this->input->post('idproduit'),
+            'date_' => $this->input->post('date_'),
+            'prix' => $this->input->post('prix'),
+        );
+        $this->MD_Produit->insert_prix_produit($new_prix_produit);
         redirect('CT_Produit');
     }
 
-    public function delete($idproduit)
+    public function fullDelete($idcompte)
     {
-        $this->MD_Produit->delete_produit($idproduit);
-        redirect('CT_Produit');
+        $this->MD_Produit->fullDelete($idcompte);
+        redirect('CT_Produit/index');
     }
 }

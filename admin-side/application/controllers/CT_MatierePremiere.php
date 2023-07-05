@@ -9,6 +9,7 @@ class CT_MatierePremiere extends CI_Controller
     {
         parent::__construct();
         $this->load->model('MD_MatierePremiere');
+        $this->load->model('MD_Gestion');
     }
 
     private function viewer($page,$data)
@@ -30,11 +31,20 @@ class CT_MatierePremiere extends CI_Controller
 
     public function store()
     {
+
+        /////////////////////////////////////////////////////////////
+        $numero = $this->input->post('numero');     // Numero de compte gestion
+        $intitule = $this->input->post('nom');      // intitule
+        $idcompte = $this->MD_Gestion->insert_compte($numero,$intitule);
+        /////////////////////////////////////////////////////////////
+
         $nouveau_matierePremiere = array(
             'nommatierepremiere' => $this->input->post('nom'),
+            'idcompte' => $idcompte,
             'date_' => $this->input->post('date_'),
             'unite' => $this->input->post('unite')
         );
+
         $idproduit = $this->MD_MatierePremiere->insert_matierePremiere($nouveau_matierePremiere);
         redirect('CT_MatierePremiere');
     }
@@ -56,9 +66,9 @@ class CT_MatierePremiere extends CI_Controller
         redirect('CT_MatierePremiere');
     }
 
-    public function delete($idmatierepremiere)
+    public function fullDelete($idcompte)
     {
-        $this->MD_MatierePremiere->delete_matierePremiere($idmatierepremiere);
+        $this->MD_MatierePremiere->fullDelete($idcompte);
         redirect('CT_MatierePremiere');
     }
 

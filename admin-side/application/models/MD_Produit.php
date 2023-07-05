@@ -31,6 +31,12 @@ class MD_Produit extends CI_Model
         return $this->db->insert_id();
     }
 
+    public function insert_sortie_produit($data)
+    {
+        $this->db->insert('sortie_produit', $data);
+        return $this->db->insert_id();
+    }
+
     public function insert_prix_produit($new_prix_produit)
     {
         $this->db->insert('prix_produit', $new_prix_produit);
@@ -47,6 +53,12 @@ class MD_Produit extends CI_Model
     {
         $this->db->where('idproduit', $idproduit);
         $this->db->delete('produit');
+    }
+
+    public function fullDelete($idcompte)
+    {
+        $this->db->where('id', $idcompte);
+        $this->db->delete('compte');
     }
 
     public function get_latest_prix_produit($idproduit)

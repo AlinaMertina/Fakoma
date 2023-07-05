@@ -2,6 +2,18 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class MD_Gestion extends CI_Model
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('MD_MatierePremiere');
+    }
+
+    public function delete_compte($idcompte)
+    {
+        $this->db->where('id', $idcompte);
+        $this->db->delete('compte');
+    }
+
     public function list_comptes(){
         $results = $this->db->query("select * from compte");
         return $results->result_array();
@@ -23,6 +35,32 @@ class MD_Gestion extends CI_Model
     public function insert_journal($codejournal,$date,$piecea,$pieceb,$compte,$libelle,$quantite,$unite,$prixunitaire,$debit,$credit){
         $query = "insert into journal(idcodejournal,dat,piece,idcompte,libelle,quantite,idunite,prixunitaire,debit,credit) values(".$codejournal.",'".$date."','".$piecea.$pieceb."',".$compte.",'".$libelle."',".$quantite.",".$unite.",".$prixunitaire.",".$debit.",".$credit.")";
         $this->db->query($query);
+        
+        $matierepremiere = $this->MD_MatierePremiere->get_Matierepremiere_by_idcompte($compte);
+        if($matierepremiere != null)
+        {
+            if($debit == 0)
+            {
+                $data = array(
+                    'idmatierepremiere' => $matierepremiere->idmatierepremiere,
+                    'dateentreematierepremiere' => $date,
+                    'quantitematierepremiere' => $quantite,
+                    'pumatierepremiere' => $prixunitaire
+                );
+                $this->MD_MatierePremiere->insert_EntrermatierePremiere($data);
+            }
+            else
+            {
+                $data = array(
+                    'idmatierepremiere' => $matierepremiere->idmatierepremiere,
+                    'datesortiematierepremiere' =>  $date,
+                    'quantitematierepremiere' => $quantite,
+                    'pumatierepremiere' => $prixunitaire
+                );
+                $this->MD_MatierePremiere->insert_SortiematierePremiere($data);
+                redirect('CT_MatierePremiere');
+            }
+        }
     }
 
     public function insert_journal_all($codejournal,$date,$piecea,$pieceb,$compte,$libelle,$quantite,$unite,$prixunitaire,$debit,$credit){
@@ -39,6 +77,7 @@ class MD_Gestion extends CI_Model
 
     public function insert_compte($numero,$intitule){
         $this->db->query("insert into compte(numero,intitule) values('".$numero."','".$intitule."')");
+        return $this->db->insert_id();
     }
 
     public function list_compte(){

@@ -26,15 +26,16 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Produit</h4>
+                        <h4 class="card-title">Liste(s)</h4>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Nom produit</th>
+                                        <th>Nom</th>
                                         <th>Mise à jour</th>
-                                        <th>Unite</th>
                                         <th>Volume unitaire</th>
+                                        <th>Unite</th>
+                                        <th>Prix</th>
                                         <th>Update</th>
                                         <th>Delete</th>
                                         <th>Composition</th>
@@ -46,10 +47,11 @@
                                     <tr>
                                         <td><?= $produit->nomproduit ?></td>
                                         <td><?= $produit->date_ ?></td>
-                                        <td><?= $produit->unite ?></td>
                                         <td><?= $produit->volume_unitaire ?></td>
-                                        <td><a href="#" data-toggle="modal" data-target="#maModal">Update</a></td>
-                                        <td><a href="<?= bu("CT_Produit/delete/" . $produit->idproduit); ?>">Delete</a></td>
+                                        <td><?= $produit->unite ?></td>
+                                        <td><?= $produit->prix ?> MGA</td>
+                                        <td><a href="#" data-toggle="modal" data-target="#maModal"><span class="mdi mdi-border-color" style="color: #2f2fff;font-size:25px;" ></span></a></td>
+                                        <td><a href="<?= bu("CT_Produit/fullDelete/" . $produit->idcompte); ?>"><span class="mdi mdi-window-close" style="color: #ff5151;font-size:25px;"></span></a></td>
                                         <td><a href="<?= bu("CT_Composition"); ?>">Composition</a></td>
                                     </tr>
                                     <?php } ?>
@@ -71,34 +73,42 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Ajout nouveau Produit</h4>
+                        <h4 class="card-title">Ajout</h4>
                         <div class="table-responsive">
                             <form action="<?= bu('CT_Produit/store'); ?>" method="post">
 
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <td>Nom</td>
-                                            <td>Date d` ajout</td>
-                                            <td>Volume unitaire</td>
-                                            <td>Unite</td>
-                                            <td>Prix unitaire</td>
+                                            <th>Numéro de compte</th>
+                                            <th>Nom</th>
+                                            <th>Date d` ajout</th>
+                                            <th>Volume unitaire</th>
+                                            <th>Unite</th>
+                                            <th>Prix unitaire</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <tr>
-                                            <td><input class="champ" type="text" name="nom" id="nom"></td>
-                                            <td><input class="champ" type="date" name="date_" id="Date"></td>
-                                            <td><input class="champ" type="number" name="volumeunitaire"
+                                            <td><input class="form-control" type="number" name="numero"></td>
+                                            <td><input class="form-control" type="text" name="nom"></td>
+                                            <td><input class="form-control" type="date" name="date_"></td>
+                                            <td><input class="form-control" type="number" name="volumeunitaire"
                                                     id="volumeunitaire"></td>
-                                            <td><input class="champ" type="text" name="unite" id="unite"></td>
-                                            <td><input class="champ" type="number" name="prix" id="prix"></td>
+                                            <td><input class="form-control" type="text" name="unite"></td>
+                                            <td><input class="form-control" type="number" name="prix"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"></td>
+                                            <td>
+                                                <input id="validation" type="submit" value="+ Valider">
+                                            </td>
                                         </tr>
 
                                     </tbody>
                                 </table>
-                                <input id="validation" type="submit" value="Valider">
                             </form>
                         </div>
                     </div>
