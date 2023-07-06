@@ -12,7 +12,7 @@
                                 <?php if (isset($poste)) {
                                     for ($i = 0; $i < count($poste); $i++) { ?>
                                         <tr>
-                                            <td> <b><?= $poste[$i]['nom_poste'] ?></b> </td>
+                                            <td> <b><?= $poste[$i]['nomposte'] ?></b> </td>
                                             <td> <a href="<?= base_url("index.php/CT_CRUD_Employer/modif_emplois_du_temps_post?idpost=" . $poste[$i]['idposte']) ?>"><i class="mdi mdi-calendar-blank"></i> </td>
                                         </tr>
                                 <?php }

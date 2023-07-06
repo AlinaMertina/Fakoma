@@ -98,6 +98,11 @@ create table post_emplois_dutemps(
     FOREIGN KEY (idsemaine) REFERENCES semaine(idsemaine)
 );
 
+create table centre_departement(
+    iddepartement serial PRIMARY KEY,
+    nom_centre VARCHAR(50)
+);
+
 create table employe_du_temps(
     idtemps serial primary key,
     idemployer int,
@@ -115,6 +120,7 @@ create table employe_du_temps(
     FOREIGN KEY (iddepartement) REFERENCES centre_departement(iddepartement)
 );
 
+CREATE SEQUENCE emp;
 
 -- 11
 -- drop view v_detailleemp;

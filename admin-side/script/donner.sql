@@ -1,13 +1,13 @@
-insert into semaine(nom_semain) values ('Lundi');
-insert into semaine(nom_semain) values ('Mardie');
-insert into semaine(nom_semain) values ('Mercredie');
-insert into semaine(nom_semain) values ('Jeudie');
-insert into semaine(nom_semain) values ('Vendredie');
-insert into semaine(nom_semain) values ('Samedie');
-insert into semaine(nom_semain) values ('Dimanche');
+insert into semaine values (1,'Lundi');
+insert into semaine values (2,'Mardie');
+insert into semaine values (3,'Mercredie');
+insert into semaine values (4,'Jeudie');
+insert into semaine values (5,'Vendredie');
+insert into semaine values (6,'Samedie');
+insert into semaine values (7,'Dimanche');
 
 insert into poste values(1,'Femme de  menage');
-insert into poste values(2,'moulleur de Betton');
+insert into poste values(2,'Moulleur de Betton');
 insert into poste values(3, 'Livreur');
 insert into poste values(7,'Directeur Generale');
 insert into poste values(8,'Fabricant de composet');

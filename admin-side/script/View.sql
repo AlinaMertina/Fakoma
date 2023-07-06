@@ -1,4 +1,4 @@
-create view v_emplois_du_temps_poste as(select idemplois_post,nom_semain,nom_poste,poste.idposte,semaine.idsemaine,T_debut,T_fin,P_debut,P_fin,date_insertion
+create view v_emplois_du_temps_poste as(select idemplois_post,nom_semain,nomposte,poste.idposte,semaine.idsemaine,T_debut,T_fin,P_debut,P_fin,date_insertion
 from post_emplois_dutemps join semaine on post_emplois_dutemps.idsemaine=semaine.idsemaine join poste on post_emplois_dutemps.idposte=poste.idposte);
 
 
