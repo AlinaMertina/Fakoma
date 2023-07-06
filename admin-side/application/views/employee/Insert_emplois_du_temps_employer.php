@@ -9,12 +9,10 @@
         color:white;
     }
     .main{
-        background-color: #101B3B;
+        
         font-size: medium;
-        color:black;
     }
     #form{
-        background-color: white;
         width: 80%;
         margin: 10%;
     }
@@ -42,9 +40,7 @@
          border: 1px solid black;
          padding: 10px;
          width: 20%;
-         color: black;
-       
-         
+         color: white;
     }
     .check{
         width: 100%;
@@ -67,7 +63,7 @@
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-                    <form class="card-body" action="<?= base_url("index.php/CT_CRUD_Employer/insert_emplois_du_temps_emp") ?>" method="post" style="background-color:#F1F4F5 ;">
+                    <form class="card-body" action="<?= base_url("index.php/CT_CRUD_Employer/insert_emplois_du_temps_emp") ?>" method="post">
                         <h3><?php if (isset($idemployer)) {
                                 echo " <input type='hidden' name='idemployer' value=" . $idemployer . " >";
                             }  ?></h3>
@@ -84,13 +80,13 @@
                                             <div class="heur_travaille">
                                                 <div class="heur">
                                                     <p>Heure de traville</p>
-                                                    <b>Debut<input type="text" style="color:white" class="form-control" id="exampleInputPassword1" name="T_debut[]" value="<?= $emplois_du_temps[$i]['t_debut'] ?>"></b>
-                                                    <b>Fin<input type="text" style="color:white" class="form-control" id="exampleInputPassword1" name="T_fin[]" value="<?= $emplois_du_temps[$i]['t_fin'] ?>"></b>
+                                                    <b>Debut<input type="text" class="form-control" id="exampleInputPassword1" name="T_debut[]" value="<?= $emplois_du_temps[$i]['t_debut'] ?>"></b>
+                                                    <b>Fin<input type="text" class="form-control" id="exampleInputPassword1" name="T_fin[]" value="<?= $emplois_du_temps[$i]['t_fin'] ?>"></b>
                                                 </div>
                                                 <div class="heur">
                                                     <p>Heure de Pausee</p>
-                                                    <b>Debut<input type="text" style="color:white" class="form-control" id="exampleInputPassword1" name="P_debut[]" value="<?= $emplois_du_temps[$i]['p_debut'] ?>"></b>
-                                                    <b>Fin<input type="text" style="color:white" class="form-control" id="exampleInputPassword1" name="P_fin[]" value="<?= $emplois_du_temps[$i]['p_fin'] ?>"></b>
+                                                    <b>Debut<input type="text" class="form-control" id="exampleInputPassword1" name="P_debut[]" value="<?= $emplois_du_temps[$i]['p_debut'] ?>"></b>
+                                                    <b>Fin<input type="text" class="form-control" id="exampleInputPassword1" name="P_fin[]" value="<?= $emplois_du_temps[$i]['p_fin'] ?>"></b>
                                                 </div>
                                             </div>
                                         </div>

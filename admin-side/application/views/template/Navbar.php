@@ -155,6 +155,16 @@
                         <span class="menu-title">Employer</span>
                     </a>
                 </li>
+
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="<?= bu("CT_CRUD_Employer/load_without_data/Poste") ?>">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-laptop"></i>
+                        </span>
+                        <span class="menu-title">Poste</span>
+                    </a>
+                </li>
+                
                 <li class="nav-item menu-items">
                     <a class="nav-link"
                         href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">

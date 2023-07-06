@@ -4,7 +4,7 @@ class MD_CRUD_Employer_model extends CI_Model
 {
     public function select_post()
     {
-        $requete = "select idposte,nom_poste from poste";
+        $requete = "select idposte,nomposte from poste";
         $query = $this->db->query($requete);
         return $query->result_array();
     }
@@ -96,7 +96,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function insert_post($poste)
     {
-        $requete = "insert into poste(nom_poste) values ('%s')";
+        $requete = "insert into poste(nomposte) values ('%s')";
         $requete = sprintf($requete, $poste);
         $query = $this->db->query($requete);
     }
@@ -200,7 +200,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function moyenne_salaire_poste()
     {
-        $requete = "select idposte,nom_poste,AVG(montant) from v_detailes_base_employee group by idposte,nom_poste";
+        $requete = "select idposte,nomposte,AVG(montant) from v_detailes_base_employee group by idposte,nomposte";
         $query = $this->db->query($requete);
         return $query->result_array();
     }
@@ -269,7 +269,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function getfautemployer($identifiant)
     {
-        $requete = "select idavertisment,prenom_employer,description,Avertisement_employer.identifiant,dateavertisement,nom_poste from  Avertisement_employer join employer  on Avertisement_employer.identifiant= employer.identifiant join poste on poste.idposte =employer.idposte  where description like '%s%s%s'";
+        $requete = "select idavertisment,prenom_employer,description,Avertisement_employer.identifiant,dateavertisement,nomposte from  Avertisement_employer join employer  on Avertisement_employer.identifiant= employer.identifiant join poste on poste.idposte =employer.idposte  where description like '%s%s%s'";
         $requete = sprintf($requete, '%', $identifiant, '%');
         $query = $this->db->query($requete);
         return $query->result_array();

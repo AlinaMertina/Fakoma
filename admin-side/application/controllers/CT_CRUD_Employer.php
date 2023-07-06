@@ -116,6 +116,7 @@ class CT_CRUD_Employer extends CI_Controller
                 $num = $num + 1;
             }
         }
+        redirect('CT_CRUD_Employer/load_without_data/Poste');
     }
     public function liste_post()
     {
@@ -166,6 +167,7 @@ class CT_CRUD_Employer extends CI_Controller
                 $num = $num + 1;
             }
         }
+        redirect("CT_CRUD_Employer/getAll_emp");
     }
     public function modif_emplois_du_temp_emp($idemploye)
     {
@@ -203,6 +205,7 @@ class CT_CRUD_Employer extends CI_Controller
                 $num = $num + 1;
             }
         }
+        redirect("CT_CRUD_Employer/getAll_emp");
     }
     public function recher_employer()
     {

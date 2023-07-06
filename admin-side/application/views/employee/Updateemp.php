@@ -43,11 +43,11 @@
                                                                         echo $info['idposte'];
                                                                     }  ?>">
                                                 <?php if (isset($info)) {
-                                                    echo $info['nom_poste'];
+                                                    echo $info['nomposte'];
                                                 }  ?></option>
                                             <?php if (isset($poste)) {
                                                 for ($i = 0; $i < count($poste); $i++) { ?>
-                                                    <option value="<?= $poste[$i]['idposte'] ?>"><?= $poste[$i]['nom_poste'] ?>
+                                                    <option value="<?= $poste[$i]['idposte'] ?>"><?= $poste[$i]['nomposte'] ?>
                                                     </option>
                                             <?php }
                                             } ?>

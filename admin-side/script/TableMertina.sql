@@ -78,7 +78,7 @@ create table TacheSpecifique_emp(
 );
 
 create view v_detailes_base_employee as (
-    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nom_poste,date_entrer,contact,montant, employer.identifiant ,dtn from employer join salaire_employer on employer.identifiant=salaire_employer.identifiant
+    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nomposte,date_entrer,contact,montant, employer.identifiant ,dtn from employer join salaire_employer on employer.identifiant=salaire_employer.identifiant
     join poste on poste.idposte=employer.idposte where datefin is null
 );
 
@@ -98,6 +98,11 @@ create table post_emplois_dutemps(
     FOREIGN KEY (idsemaine) REFERENCES semaine(idsemaine)
 );
 
+create table centre_departement(
+    iddepartement serial PRIMARY KEY,
+    nom_centre VARCHAR(50)
+);
+
 create table employe_du_temps(
     idtemps serial primary key,
     idemployer int,
@@ -115,6 +120,7 @@ create table employe_du_temps(
     FOREIGN KEY (iddepartement) REFERENCES centre_departement(iddepartement)
 );
 
+CREATE SEQUENCE emp;
 
 -- 11
 -- drop view v_detailleemp;
