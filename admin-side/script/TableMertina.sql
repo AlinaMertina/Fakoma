@@ -1,6 +1,6 @@
 create table poste(
     idposte serial primary key,
-    nom_poste Varchar(50)
+    nomposte Varchar(50)
 );
 
 create table semaine(
