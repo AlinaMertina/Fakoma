@@ -340,6 +340,18 @@ class CT_CRUD_Employer extends CI_Controller
         if ($idemployer != null) {
             $data = array();
             $data['detaille'] = $this->employer->detailleemp($idemployer);
+
+            $nombre = $this->employer->get_evolution_salaire($idemployer);
+            $data['idemployer'] = $idemployer;
+            $data['label'] = '[0';
+            $data['salaire'] = '[0';
+            foreach ($nombre as $nbr) {
+                $data['label'] = $data['label'] . ",'" . $nbr['datedebut'] . "'";
+                $data['salaire'] = $data['salaire'] . ',' . $nbr['montant'];
+            }
+            $data['label'] = $data['label'] . "]";
+            $data['salaire'] = $data['salaire'] . "]";
+
             $this->load_page('Detailleemp', $data);
         }
     }

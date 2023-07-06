@@ -32,7 +32,7 @@ drop view  v_employe_du_temps_employer;
 
 
 create view v_detailes_base_employee as (
-    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nom_poste,date_entrer,contact,montant from employer join salaire_employer on employer.identifiant=salaire_employer.identifiant
+    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nomposte,date_entrer,contact,montant from employer join salaire_employer on CAST ( employer.idemployer AS varchar ) = salaire_employer.identifiant
     join poste on poste.idposte=employer.idposte where datefin is null
 );
 
