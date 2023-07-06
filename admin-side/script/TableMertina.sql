@@ -1,6 +1,6 @@
 create table poste(
     idposte serial primary key,
-    nom_poste Varchar(50)
+    nomposte Varchar(50)
 );
 
 create table semaine(
@@ -78,7 +78,7 @@ create table TacheSpecifique_emp(
 );
 
 create view v_detailes_base_employee as (
-    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nom_poste,date_entrer,contact,montant, employer.identifiant ,dtn from employer join salaire_employer on employer.identifiant=salaire_employer.identifiant
+    select poste.idposte,employer.idemployer,nom_employer,prenom_employer,nomposte,date_entrer,contact,montant, employer.identifiant ,dtn from employer join salaire_employer on employer.identifiant=salaire_employer.identifiant
     join poste on poste.idposte=employer.idposte where datefin is null
 );
 
