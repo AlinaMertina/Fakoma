@@ -66,7 +66,6 @@ class CT_CRUD_Employer extends CI_Controller
     {
         if (isset($_POST['idemployer'])) {
             $data['detaile_employer'] = $this->employer->show_details_employee($_POST['idemployer']);
-            //view
         }
     }
     public function updateemployer($idemployer)
@@ -285,19 +284,19 @@ class CT_CRUD_Employer extends CI_Controller
             $this->load_page('Evolution_salaire', $data);
         }
     }
-    public function setabsenceemp($idemployer)
+    public function setabsenceemp($identifiant)
     {
-        if ($idemployer != null) {
+        if ($identifiant != null) {
             $data = array();
-            $data['idemployer'] = $idemployer;
+            $data['identifiant'] = $identifiant;
             $this->load_page('Absence_emp', $data);
         }
     }
     public function insert_absence_emp()
     {
         if (isset($_POST['date'])) {
-            $this->employer->insert_absence_employer($_POST['identemp'], $_POST['date']);
-            $this->chart_nbr_absence_emp($_POST['identemp']);
+            $this->employer->insert_absence_employer($_POST['identifiant'], $_POST['date']);
+            $this->chart_nbr_absence_emp($_POST['identifiant']);
         }
     }
     public function chart_nbr_absence_emp($idemployer)
@@ -320,7 +319,7 @@ class CT_CRUD_Employer extends CI_Controller
     {
         if (isset($_POST['date'])) {
             $this->employer->setAvertisement($_POST['identifiant'], $_POST['description'], $_POST['date']);
-            $this->load_without_data('Avertisementemployer');
+            $this->detaille($_POST['identifiant']);
         }
     }
     public function getfauteemployer()
@@ -375,12 +374,12 @@ class CT_CRUD_Employer extends CI_Controller
             $this->load_page('Avertisementemployer', $data);
         }
     }
-    public function ajoutTache($idemployer)
+    public function ajoutTache($identifiant)
     {
 
-        if ($idemployer != null) {
+        if ($identifiant != null) {
             $data = array();
-            $data['idemployer'] = $idemployer;
+            $data['identifiant'] = $identifiant;
             $this->load_page('AjoutTache', $data);
         }
     }

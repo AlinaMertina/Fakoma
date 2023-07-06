@@ -9,8 +9,7 @@
                         } ?>
                     </h4>
                     <div class="col-3" style="float:right;">
-                        <a href="<?= base_url("index.php/CT_CRUD_Employer/detaille") . "/" . $idemployer; ?>"
-                            class="btn btn-primary">Retour</a>
+                        <a href="<?= base_url("index.php/CT_CRUD_Employer/detaille") . "/" . $identifiant; ?>" class="btn btn-primary">Retour</a>
                     </div>
                 </div>
                 <div class="model-body justify-content-around mt-3 p-3">
@@ -22,12 +21,9 @@
 
                             </div>
                             <div class="card maininsert">
-                                <form class="row g-3 px-3 formmain" id="employeeForm" method="POST"
-                                    action="<?= base_url("index.php/CT_CRUD_Employer/setTache") ?>"
-                                    enctype="multipart/form-data">
+                                <form class="row g-3 px-3 formmain" id="employeeForm" method="POST" action="<?= base_url("index.php/CT_CRUD_Employer/setTache") ?>" enctype="multipart/form-data">
                                     <div class="col-auto col-lg-12">
-                                        <input type="text" class="form-control" placeholder="description"
-                                            name="description">
+                                        <input type="text" class="form-control" placeholder="description" name="description">
                                     </div>
                                     <div class="col-auto col-lg-12">
                                         <input type="date" class="form-control" name="date">
@@ -38,8 +34,7 @@
                                     <div class="col-auto col-lg-12 mt-3 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary mb-3">Valider</button>
                                     </div>
-                                    <input type="hidden" class="form-control" name="identifiant"
-                                        value="<?= $idemployer ?>">
+                                    <input type="hidden" class="form-control" name="identifiant" value="<?= $identifiant ?>">
                                 </form>
                             </div>
 

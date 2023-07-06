@@ -32,7 +32,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function show_details_employee($idemploye)
     {
-        $requete = "select * from v_detailes_base_employee where  idemployer ='%s' ";
+        $requete = "select * from v_detailes_base_employee where  identifiant ='%s' ";
         $requete = sprintf($requete, $idemploye);
         $query = $this->db->query($requete);
         return $query->result_array()[0];
@@ -276,7 +276,7 @@ class MD_CRUD_Employer_model extends CI_Model
     }
     public function detailleemp($idemploye)
     {
-        $requete = " select * from v_detailleemp where idemployer='%s' order by dateavertisement desc limit 1";
+        $requete = " select * from v_detailleemp where identifiant='%s' order by dateavertisement desc limit 1";
         $requete = sprintf($requete, $idemploye);
         $query = $this->db->query($requete);
         return $query->result_array()[0];

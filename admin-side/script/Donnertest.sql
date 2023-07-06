@@ -8,7 +8,7 @@
 §	RATEFIARIVONY Jaona
 §	RAKOTONDRANAIVO Alain Rico
 
-insert into admin(idadmin,nom,motdepasse,dtn,contact,nomo,premom,description) values (1,'TOTO Mertina Claudie','mertina44','2023-06-28','0346603384','TOTO','Mertina Claudie','Chef de projet');
+insert into admin values (1,'TOTO Mertina Claudie','mertina44','2023-06-28','0346603384','Chef de projet');
 
 --code jourbale
 insert into codejournal (id,code,intitule) values (1,'AC','Achats');

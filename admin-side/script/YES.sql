@@ -444,6 +444,27 @@ ALTER TABLE "public".stock_produits_finis ADD CONSTRAINT fk_stock_produits_finis
 
 ALTER TABLE "public".tachespecifique_emp ADD CONSTRAINT tachespecifique_emp_identifiant_fkey FOREIGN KEY ( identifiant ) REFERENCES "public".employer( identifiant );
 
+CREATE VIEW "public".v_journal AS  SELECT journal.id AS idjournal,
+    journal.idcodejournal,
+    codejournal.code AS codejournal,
+    codejournal.intitule AS intitulecodejournal,
+    journal.dat,
+    journal.piece,
+    journal.idcompte,
+    compte.numero,
+    compte.intitule AS intitulecompte,
+    journal.libelle,
+    journal.quantite,
+    journal.idunite,
+    unite.unite,
+    journal.prixunitaire,
+    journal.debit,
+    journal.credit
+   FROM (((journal
+     JOIN codejournal ON ((codejournal.id = journal.idcodejournal)))
+     JOIN compte ON ((compte.id = journal.idcompte)))
+     JOIN unite ON ((unite.id = journal.idunite)));
+
 CREATE VIEW "public".entry AS  SELECT xt.idproduit,
     xt.nomproduit,
     spf.dateentreestock,
@@ -517,6 +538,7 @@ CREATE VIEW "public".v_detailleemp AS  SELECT poste.idposte,
     employer.nom_employer,
     employer.prenom_employer,
     employer.idemployer,
+    employer.identifiant,
     employer.date_entrer,
     employer.dtn,
     avertisement_employer.description,
@@ -595,27 +617,6 @@ CREATE VIEW "public".v_grand_livre_compte_solde AS  SELECT v_grand_livre_compte.
     (sum(v_grand_livre_compte.debit) - sum(v_grand_livre_compte.credit)) AS solde
    FROM v_grand_livre_compte
   GROUP BY v_grand_livre_compte.idcompte, v_grand_livre_compte.numero, v_grand_livre_compte.intitulecompte;
-
-CREATE VIEW "public".v_journal AS  SELECT journal.id AS idjournal,
-    journal.idcodejournal,
-    codejournal.code AS codejournal,
-    codejournal.intitule AS intitulecodejournal,
-    journal.dat,
-    journal.piece,
-    journal.idcompte,
-    compte.numero,
-    compte.intitule AS intitulecompte,
-    journal.libelle,
-    journal.quantite,
-    journal.idunite,
-    unite.unite,
-    journal.prixunitaire,
-    journal.debit,
-    journal.credit
-   FROM (((journal
-     JOIN codejournal ON ((codejournal.id = journal.idcodejournal)))
-     JOIN compte ON ((compte.id = journal.idcompte)))
-     JOIN unite ON ((unite.id = journal.idunite)));
 
 CREATE VIEW "public".v_produit AS  SELECT v_journal.numero,
     v_journal.intitulecodejournal,

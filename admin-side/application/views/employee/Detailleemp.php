@@ -7,38 +7,39 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <div class="employee-profile d-flex align-items-center">
-                                <img src="<?php echo base_url("assets/imageemp") . "/image.jpg";  ?>" alt="" />
+                                <img src="<?php echo base_url("assets/imageemp") . "/" . $detaille['identifiant'] . ".png";  ?>"
+                                    alt="" />
                                 <p class="m-0">Alina Mertina</p>
                             </div>
-                            <a href="<?= base_url("index.php/CT_CRUD_Employer/remove_employer") . "/" . $detaille['idemployer'] ?>"
+                            <a href="<?= base_url("index.php/CT_CRUD_Employer/remove_employer") . "/" . $detaille['identifiant'] ?>"
                                 class="btn btn-danger fire-button">Renvoyer</a>
                         </div>
                         <div class="row">
                             <div class="col-4">
                                 <h4>Profile picture</h4>
-                                <img src="<?php echo base_url("assets/imageemp") . "/image.jpg";  ?>" alt=""
-                                    class="emp-photo" />
+                                <img src="<?php echo base_url("assets/imageemp") . "/" . $detaille['identifiant'] . ".png"; ?>"
+                                    alt="" class="emp-photo" />
                                 <div class="mt-5 employee-action-buttons d-flex flex-column">
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/updateemployer") . "/" . $detaille['idemployer'] ?>">Modification
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/updateemployer") . "/" . $detaille['identifiant'] ?>">Modification
                                         d'information</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/modif_emplois_du_temp_emp") . "/" . $detaille['idemployer'] ?>">Changement
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/modif_emplois_du_temp_emp") . "/" . $detaille['identifiant'] ?>">Changement
                                         d'emplois du temps</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/readEmploisdutemps") . "/" . $detaille['idemployer'] ?>">Emplois
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/readEmploisdutemps") . "/" . $detaille['identifiant'] ?>">Emplois
                                         du temps</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/listfaute") . "/" . $detaille['idemployer'] ?>">Liste
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/listfaute") . "/" . $detaille['identifiant'] ?>">Liste
                                         faute commise</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/chart_nbr_absence_emp") . "/" . $detaille['idemployer'] ?>">Nombre
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/chart_nbr_absence_emp") . "/" . $detaille['identifiant'] ?>">Nombre
                                         d'absence</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/selectTache") . "/" . $detaille['idemployer'] ?>">Voir
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/selectTache") . "/" . $detaille['identifiant'] ?>">Voir
                                         les taches recents</a>
                                     <a class="act btn btn-secondary"
-                                        href="<?= base_url("index.php/CT_CRUD_Employer/ajoutTache") . "/" . $detaille['idemployer'] ?>">Nouvelle
+                                        href="<?= base_url("index.php/CT_CRUD_Employer/ajoutTache") . "/" . $detaille['identifiant'] ?>">Nouvelle
                                         tache specifique</a>
                                 </div>
                             </div>
@@ -77,8 +78,8 @@
                                         <form action="<?= base_url("index.php/CT_CRUD_Employer/voirpresence") ?>"
                                             method="POST">
                                             <label for="">Si present ?</label>
-                                            <input type="hidden" name="idemployer"
-                                                value="<?= $detaille['idemployer'] ?>" />
+                                            <input type="hidden" name="identifiant"
+                                                value="<?= $detaille['identifiant'] ?>" />
 
                                             <div class="d-flex align-items-center">
                                                 <input type="date" class="form-control" name="date">
@@ -87,22 +88,22 @@
                                             </div>
                                         </form>
                                         <hr>
-                                        <form action="<?= base_url("index.php/CT_CRUD_Employer/setAvertissement"); ?>"
+                                        <form action="<?= base_url("index.php/CT_CRUD_Employer/insert_absence_emp"); ?>"
                                             method="post" class="mt-3">
                                             <label for="">Ajout absence</label>
-                                            <input type="hidden" name="identemp" value="<?= $detaille['idemployer'] ?>">
+                                            <input type="hidden" name="identifiant"
+                                                value="<?= $detaille['identifiant'] ?>">
                                             <input type="date" class="form-control" name="date">
                                             <div class="d-flex justify-content-end">
                                                 <input class="btn btn-primary mt-1" type="submit" value="OK" />
                                             </div>
                                         </form>
                                         <hr>
-                                        <form
-                                            action="<?= base_url("/index.php/CT_CRUD_Employer/insert_absence_emp"); ?>"
+                                        <form action="<?= base_url("/index.php/CT_CRUD_Employer/setAvertissement"); ?>"
                                             method="post" class="mt-3">
                                             <label for="">Ajout faute</label>
                                             <input type="hidden" name="identifiant"
-                                                value="<?= $detaille['idemployer'] ?>">
+                                                value="<?= $detaille['identifiant'] ?>">
                                             <input type="text" placeholder="Description..." class="form-control"
                                                 name="description">
                                             <input type="date" class="form-control" name="date">

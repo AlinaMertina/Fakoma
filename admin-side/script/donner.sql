@@ -10,7 +10,7 @@ insert into poste values(1,'Femme de  menage');
 insert into poste values(2,'Moulleur de Betton');
 insert into poste values(3, 'Livreur');
 insert into poste values(7,'Directeur Generale');
-insert into poste values(8,'Fabricant de composet');
+insert into poste values(8,'Fabricant de composte');
 insert into poste values(5,'Chimiste');
 insert into poste values(6,'Emballeur');
 
